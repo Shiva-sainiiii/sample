@@ -157,7 +157,7 @@
       <div class="hidden md:flex items-center gap-8 font-display text-sm tracking-wider text-cream/80 shrink-0">
         <a href="#about" class="hover:text-gold transition">About</a>
         <a href="#categories" class="hover:text-gold transition">Categories</a>
-        <a href="#scheme" class="hover:text-gold transition">Lucky Draw</a>
+        <a href="#reviews" class="hover:text-gold transition">Reviews</a>
         <a href="#contact" class="hover:text-gold transition">Contact</a>
       </div>
       <a href="https://wa.me/917988681919" target="_blank" class="shrink-0 btn-gold text-maroon-deep font-semibold text-xs sm:text-sm px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full font-display tracking-wide whitespace-nowrap">
@@ -300,6 +300,97 @@
     </div>
   </section>
 
+  <div class="ornate-divider max-w-4xl mx-auto"></div>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="px-6 py-20 max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="text-gold-champagne text-xs tracking-[0.3em] uppercase mb-3 font-display">Customer Love</p>
+      <h2 class="font-display text-3xl sm:text-4xl gold-gradient-text mb-4">What Our Customers Say</h2>
+      <div class="flex items-center justify-center gap-1 text-gold text-xl">
+        ★★★★★
+        <span class="text-cream/50 text-sm font-body ml-2">4.9 out of 5 · 120+ happy customers</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card-texture gold-border-glow rounded-2xl p-7">
+        <div class="text-gold text-lg mb-3">★★★★★</div>
+        <p class="text-cream/70 text-sm leading-relaxed mb-5">"Bahut hi badhiya finishing aur making charges bhi kam hain. Meri shaadi ka poora set yahin se banwaya, sabne tareef ki."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-display">S</div>
+          <div>
+            <p class="text-gold-champagne text-sm font-display">Sunita Devi</p>
+            <p class="text-cream/40 text-xs">Kharkhoda</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-texture gold-border-glow rounded-2xl p-7">
+        <div class="text-gold text-lg mb-3">★★★★★</div>
+        <p class="text-cream/70 text-sm leading-relaxed mb-5">"HUID certificate ke saath gold milta hai, isliye trust hai. Old gold exchange bhi fair rate pe hua. Highly recommended!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-display">R</div>
+          <div>
+            <p class="text-gold-champagne text-sm font-display">Rajesh Kumar</p>
+            <p class="text-cream/40 text-xs">Sonipat</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-texture gold-border-glow rounded-2xl p-7">
+        <div class="text-gold text-lg mb-3">★★★★★</div>
+        <p class="text-cream/70 text-sm leading-relaxed mb-5">"Lucky Draw scheme join ki thi, bahut accha experience raha. Staff bhi bahut politely deal karta hai. Ekdum trusted dukaan hai."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-display">P</div>
+          <div>
+            <p class="text-gold-champagne text-sm font-display">Pooja Sharma</p>
+            <p class="text-cream/40 text-xs">Kharkhoda</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornate-divider max-w-4xl mx-auto"></div>
+
+  <!-- FEEDBACK FORM -->
+  <section id="feedback" class="px-6 py-20 max-w-2xl mx-auto">
+    <div class="text-center mb-10">
+      <p class="text-gold-champagne text-xs tracking-[0.3em] uppercase mb-3 font-display">We'd Love To Hear From You</p>
+      <h2 class="font-display text-3xl sm:text-4xl gold-gradient-text">Share Your Feedback</h2>
+    </div>
+    <form id="feedback-form" class="scheme-card rounded-2xl p-7 sm:p-10 space-y-6">
+      <div>
+        <label class="block text-cream/70 text-xs uppercase tracking-wider mb-2 font-display">Your Name</label>
+        <input type="text" id="fb-name" required placeholder="Enter your name"
+          class="w-full bg-void/60 border border-gold/25 rounded-lg px-4 py-3 text-cream placeholder-cream/30 focus:border-gold outline-none transition text-sm">
+      </div>
+      <div>
+        <label class="block text-cream/70 text-xs uppercase tracking-wider mb-2 font-display">Phone Number</label>
+        <input type="tel" id="fb-phone" required placeholder="Enter your phone number"
+          class="w-full bg-void/60 border border-gold/25 rounded-lg px-4 py-3 text-cream placeholder-cream/30 focus:border-gold outline-none transition text-sm">
+      </div>
+      <div>
+        <label class="block text-cream/70 text-xs uppercase tracking-wider mb-2 font-display">Rate Your Experience</label>
+        <div id="star-rating" class="flex gap-2 text-3xl" role="radiogroup" aria-label="Star rating">
+          <button type="button" class="star text-cream/20 hover:text-gold transition" data-value="1" aria-label="1 star">★</button>
+          <button type="button" class="star text-cream/20 hover:text-gold transition" data-value="2" aria-label="2 stars">★</button>
+          <button type="button" class="star text-cream/20 hover:text-gold transition" data-value="3" aria-label="3 stars">★</button>
+          <button type="button" class="star text-cream/20 hover:text-gold transition" data-value="4" aria-label="4 stars">★</button>
+          <button type="button" class="star text-cream/20 hover:text-gold transition" data-value="5" aria-label="5 stars">★</button>
+        </div>
+        <input type="hidden" id="fb-rating" value="0">
+      </div>
+      <div>
+        <label class="block text-cream/70 text-xs uppercase tracking-wider mb-2 font-display">Your Message</label>
+        <textarea id="fb-message" rows="4" placeholder="Tell us about your experience..."
+          class="w-full bg-void/60 border border-gold/25 rounded-lg px-4 py-3 text-cream placeholder-cream/30 focus:border-gold outline-none transition text-sm resize-none"></textarea>
+      </div>
+      <p id="fb-error" class="hidden text-red-400 text-xs text-center">Please fill your name, phone, and a star rating.</p>
+      <button type="submit" class="btn-gold text-maroon-deep font-bold w-full py-3.5 rounded-full font-display tracking-wide">
+        Send Feedback on WhatsApp
+      </button>
+    </form>
+  </section>
+
   <!-- CONTACT / FOOTER -->
   <footer id="contact" class="bg-maroon-deep border-t border-gold/20 px-6 py-16">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -330,6 +421,51 @@
     <div class="ornate-divider max-w-4xl mx-auto my-10"></div>
     <p class="text-center text-cream/30 text-xs">© 2026 Gopi Ram Jewellers (Barona Wale) · Kharkhoda · All Rights Reserved</p>
   </footer>
+
+  <script>
+    // Star rating interaction
+    const stars = document.querySelectorAll('#star-rating .star');
+    const ratingInput = document.getElementById('fb-rating');
+
+    function paintStars(value) {
+      stars.forEach(s => {
+        s.classList.toggle('text-gold', parseInt(s.dataset.value) <= value);
+        s.classList.toggle('text-cream/20', parseInt(s.dataset.value) > value);
+      });
+    }
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        ratingInput.value = star.dataset.value;
+        paintStars(parseInt(star.dataset.value));
+      });
+      star.addEventListener('mouseenter', () => paintStars(parseInt(star.dataset.value)));
+    });
+    document.getElementById('star-rating').addEventListener('mouseleave', () => {
+      paintStars(parseInt(ratingInput.value));
+    });
+
+    // Form submission -> WhatsApp
+    document.getElementById('feedback-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('fb-name').value.trim();
+      const phone = document.getElementById('fb-phone').value.trim();
+      const rating = ratingInput.value;
+      const message = document.getElementById('fb-message').value.trim();
+      const errorEl = document.getElementById('fb-error');
+
+      if (!name || !phone || rating === '0') {
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      errorEl.classList.add('hidden');
+
+      const stars = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
+      const text = `Feedback for Gopi Ram Jewellers%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ARating: ${encodeURIComponent(stars)} (${rating}/5)%0AMessage: ${encodeURIComponent(message || 'No additional comments')}`;
+
+      window.open(`https://wa.me/917988681919?text=${text}`, '_blank');
+    });
+  </script>
 
 </body>
 </html>
