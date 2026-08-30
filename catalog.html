@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalog | Gopi Ram Jewellers (Barona Wale)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'void': '#120303',
+          'maroon': '#3D0C0C',
+          'maroon-deep': '#2A0808',
+          'burgundy': '#800020',
+          'gold': '#D4AF37',
+          'gold-champagne': '#E6CA65',
+          'gold-soft': '#C9A54E',
+          'cream': '#F5F0E6',
+        },
+        fontFamily: {
+          'display': ['Cinzel', 'serif'],
+          'body': ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  * { scroll-behavior: smooth; }
+  body { background-color: #120303; }
+
+  .texture-overlay {
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(212,175,55,0.05) 0%, transparent 40%),
+      radial-gradient(circle at 85% 60%, rgba(128,0,32,0.18) 0%, transparent 50%);
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #C9A54E 0%, #F4E5A1 25%, #D4AF37 50%, #E6CA65 75%, #C9A54E 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #E6CA65 50%, #C9A54E 100%);
+    transition: all 0.3s ease;
+  }
+  .btn-gold:hover {
+    box-shadow: 0 0 20px rgba(212,175,55,0.5);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .product-card {
+    background: linear-gradient(155deg, #1F0606 0%, #2A0808 100%);
+    box-shadow: 0 0 0 1px rgba(212,175,55,0.2), 0 4px 20px rgba(0,0,0,0.4);
+    transition: all 0.4s ease;
+  }
+  .product-card:hover {
+    box-shadow: 0 0 25px rgba(212,175,55,0.3), 0 0 0 1px rgba(212,175,55,0.55), 0 10px 30px rgba(0,0,0,0.5);
+    transform: translateY(-6px);
+  }
+  .product-card:hover .product-img {
+    transform: scale(1.08);
+  }
+  .product-img {
+    transition: transform 0.6s ease;
+  }
+
+  .filter-btn {
+    transition: all 0.3s ease;
+  }
+  .filter-btn.active {
+    background: linear-gradient(135deg, #D4AF37, #E6CA65);
+    color: #120303;
+  }
+  .filter-btn:not(.active) {
+    background: rgba(212,175,55,0.08);
+    color: #E6CA65;
+    border: 1px solid rgba(212,175,55,0.25);
+  }
+  .filter-btn:not(.active):hover {
+    background: rgba(212,175,55,0.18);
+  }
+
+  .badge-huid {
+    background: rgba(212,175,55,0.15);
+    border: 1px solid rgba(212,175,55,0.4);
+  }
+
+  ::selection { background: #D4AF37; color: #120303; }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { animation: none; opacity: 1; transform: none; }
+    .product-card, .product-img { transition: none; }
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #E6CA65;
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body class="bg-void text-cream font-body texture-overlay">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-void/95 backdrop-blur-md border-b border-gold/20">
+    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border-2 border-gold flex items-center justify-center text-gold font-display text-lg">ॐ</div>
+        <div>
+          <h1 class="font-display text-lg sm:text-xl gold-gradient-text tracking-wide leading-tight">Gopi Ram Jewellers</h1>
+          <p class="text-[10px] sm:text-xs text-cream/50 tracking-widest uppercase">Barona Wale · Catalog</p>
+        </div>
+      </a>
+      <a href="https://wa.me/917988681919" target="_blank" class="btn-gold text-maroon-deep font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full font-display tracking-wide whitespace-nowrap">
+        WhatsApp Us
+      </a>
+    </nav>
+  </header>
+
+  <!-- PAGE HEADING -->
+  <section class="px-6 pt-16 pb-10 text-center max-w-3xl mx-auto">
+    <p class="text-gold-champagne text-xs tracking-[0.3em] uppercase mb-3 font-display">Our Full Collection</p>
+    <h2 class="font-display text-4xl sm:text-5xl gold-gradient-text mb-4">The Catalog</h2>
+    <p class="text-cream/60 text-sm sm:text-base leading-relaxed">
+      22 Carat Hallmark Gold · HUID Certified · Flat 7% Making Charges on every piece below
+    </p>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="px-6 mb-10 flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
+    <button class="filter-btn active font-display text-xs sm:text-sm tracking-wide px-5 py-2.5 rounded-full" data-filter="all">All Items</button>
+    <button class="filter-btn font-display text-xs sm:text-sm tracking-wide px-5 py-2.5 rounded-full" data-filter="rings">Rings</button>
+    <button class="filter-btn font-display text-xs sm:text-sm tracking-wide px-5 py-2.5 rounded-full" data-filter="necklaces">Necklaces</button>
+    <button class="filter-btn font-display text-xs sm:text-sm tracking-wide px-5 py-2.5 rounded-full" data-filter="earrings">Tops &amp; Earrings</button>
+    <button class="filter-btn font-display text-xs sm:text-sm tracking-wide px-5 py-2.5 rounded-full" data-filter="bangles">Bangles</button>
+    <button class="filter-btn font-display text-xs sm:text-sm tracking-wide px-5 py-2.5 rounded-full" data-filter="chains">Chains</button>
+    <button class="filter-btn font-display text-xs sm:text-sm tracking-wide px-5 py-2.5 rounded-full" data-filter="diamond">Diamond</button>
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <section class="px-6 pb-24 max-w-7xl mx-auto">
+    <div id="grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
+
+      <!-- Rings -->
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="rings">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=75&auto=format&fit=crop" alt="22KT gold gents ring" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">HUID 916</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Gents Gold Ring</h4>
+          <p class="text-cream/50 text-xs mt-1">22KT · Classic Band</p>
+        </div>
+      </div>
+
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="rings">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=600&q=75&auto=format&fit=crop" alt="Ladies gold ring design" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">HUID 916</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Ladies Gold Ring</h4>
+          <p class="text-cream/50 text-xs mt-1">22KT · Floral Design</p>
+        </div>
+      </div>
+
+      <!-- Necklaces -->
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="necklaces">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=75&auto=format&fit=crop" alt="Bridal gold necklace set" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">Bridal</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Bridal Necklace Set</h4>
+          <p class="text-cream/50 text-xs mt-1">Fully Customizable</p>
+        </div>
+      </div>
+
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="necklaces">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=600&q=75&auto=format&fit=crop" alt="Gold necklace design" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">HUID 916</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Traditional Necklace</h4>
+          <p class="text-cream/50 text-xs mt-1">22KT · Temple Style</p>
+        </div>
+      </div>
+
+      <!-- Earrings -->
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="earrings">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=75&auto=format&fit=crop" alt="Gold earrings tops" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">Light Weight</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Daily Wear Tops</h4>
+          <p class="text-cream/50 text-xs mt-1">22KT · Minimal Design</p>
+        </div>
+      </div>
+
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="earrings">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1620656798579-1284ff86b365?w=600&q=75&auto=format&fit=crop" alt="Jhumka earrings gold" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">HUID 916</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Gold Jhumkas</h4>
+          <p class="text-cream/50 text-xs mt-1">Festive Collection</p>
+        </div>
+      </div>
+
+      <!-- Bangles -->
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="bangles">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=75&auto=format&fit=crop" alt="Gold bangles set" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">HUID 916</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Classic Bangles</h4>
+          <p class="text-cream/50 text-xs mt-1">22KT · Set of 2</p>
+        </div>
+      </div>
+
+      <!-- Chains -->
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="chains">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1611591437269-8bf9f1cfeb9c?w=600&q=75&auto=format&fit=crop" alt="Gold chain for men" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">HUID 916</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Men's Gold Chain</h4>
+          <p class="text-cream/50 text-xs mt-1">22KT · Curb Link</p>
+        </div>
+      </div>
+
+      <!-- Diamond -->
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="diamond">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=75&auto=format&fit=crop" alt="Diamond jewellery set" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">Designer</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Diamond Ring Set</h4>
+          <p class="text-cream/50 text-xs mt-1">Special Designer Piece</p>
+        </div>
+      </div>
+
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="diamond">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=75&auto=format&fit=crop" alt="Diamond earrings gold" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">Designer</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Diamond Earrings</h4>
+          <p class="text-cream/50 text-xs mt-1">Special Designer Piece</p>
+        </div>
+      </div>
+
+      <!-- Extra rings/necklace fillers -->
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="rings">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=75&auto=format&fit=crop" alt="Gold engagement ring" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">HUID 916</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Couple Ring Set</h4>
+          <p class="text-cream/50 text-xs mt-1">22KT · Matching Pair</p>
+        </div>
+      </div>
+
+      <div class="product-card rounded-2xl overflow-hidden fade-up" data-cat="necklaces">
+        <div class="aspect-square overflow-hidden relative">
+          <img class="product-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=75&auto=format&fit=crop" alt="Gold pendant necklace" loading="lazy">
+          <span class="absolute top-3 left-3 badge-huid text-gold-champagne text-[10px] font-display tracking-wide px-2.5 py-1 rounded-full">HUID 916</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-display text-gold text-sm tracking-wide">Pendant Necklace</h4>
+          <p class="text-cream/50 text-xs mt-1">22KT · Daily Wear</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Empty state (hidden by default, shown by JS if filter has 0 results) -->
+    <p id="empty-state" class="hidden text-center text-cream/40 py-16 font-display">No items in this category yet — ask us on WhatsApp for latest arrivals.</p>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="px-6 pb-20 text-center">
+    <div class="max-w-2xl mx-auto border border-gold/25 rounded-2xl p-10 bg-maroon-deep/40">
+      <h3 class="font-display text-2xl sm:text-3xl gold-gradient-text mb-3">Didn't Find What You're Looking For?</h3>
+      <p class="text-cream/60 text-sm mb-6">Har design customized ho sakta hai as per your demand — humein WhatsApp par apni pasand batayein.</p>
+      <a href="https://wa.me/917988681919" target="_blank" class="btn-gold text-maroon-deep font-bold px-8 py-3.5 rounded-full font-display tracking-wide inline-block">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-maroon-deep border-t border-gold/20 px-6 py-8 text-center">
+    <p class="text-cream/30 text-xs">© 2026 Gopi Ram Jewellers (Barona Wale) · Kharkhoda · All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#grid > div');
+    const emptyState = document.getElementById('empty-state');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.cat === filter;
+          card.style.display = match ? '' : 'none';
+          if (match) visibleCount++;
+        });
+
+        emptyState.classList.toggle('hidden', visibleCount > 0);
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gopi Ram Jewellers (Barona Wale) | Kharkhoda's Trusted Sunar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'void': '#120303',
+          'maroon': '#3D0C0C',
+          'maroon-deep': '#2A0808',
+          'burgundy': '#800020',
+          'gold': '#D4AF37',
+          'gold-champagne': '#E6CA65',
+          'gold-soft': '#C9A54E',
+          'cream': '#F5F0E6',
+        },
+        fontFamily: {
+          'display': ['Cinzel', 'serif'],
+          'decorative': ['Cinzel Decorative', 'serif'],
+          'body': ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  * { scroll-behavior: smooth; }
+  body { background-color: #120303; }
+
+  .texture-overlay {
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(212,175,55,0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(128,0,32,0.15) 0%, transparent 50%);
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #C9A54E 0%, #F4E5A1 25%, #D4AF37 50%, #E6CA65 75%, #C9A54E 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-border-glow {
+    box-shadow: 0 0 0 1px rgba(212,175,55,0.3), 0 4px 20px rgba(0,0,0,0.4);
+    transition: all 0.4s ease;
+  }
+  .gold-border-glow:hover {
+    box-shadow: 0 0 25px rgba(212,175,55,0.35), 0 0 0 1px rgba(212,175,55,0.6), 0 8px 30px rgba(0,0,0,0.5);
+    transform: translateY(-4px);
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #E6CA65 50%, #C9A54E 100%);
+    transition: all 0.3s ease;
+  }
+  .btn-gold:hover {
+    box-shadow: 0 0 20px rgba(212,175,55,0.5);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .ornate-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+  }
+  .ornate-divider::before {
+    content: '❖';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #120303;
+    color: #D4AF37;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  .seal-pulse {
+    animation: sealPulse 3s ease-in-out infinite;
+  }
+  @keyframes sealPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(212,175,55,0); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.8s ease forwards;
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.25s; }
+  .delay-3 { animation-delay: 0.4s; }
+
+  .hero-bg {
+    background:
+      linear-gradient(180deg, rgba(18,3,3,0.3) 0%, rgba(18,3,3,0.75) 60%, #120303 100%),
+      radial-gradient(ellipse at center, #4A0404 0%, #2A0808 55%, #120303 100%);
+  }
+
+  .card-texture {
+    background: linear-gradient(155deg, #1F0606 0%, #2A0808 100%);
+  }
+
+  ::selection { background: #D4AF37; color: #120303; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up, .seal-pulse { animation: none; opacity: 1; transform: none; }
+  }
+
+  .scheme-card {
+    background: linear-gradient(135deg, #2A0808 0%, #1A0505 100%);
+    border: 1px solid rgba(212,175,55,0.25);
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #E6CA65;
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body class="bg-void text-cream font-body texture-overlay">
+
+  <!-- TOP UTILITY BAR -->
+  <div class="hidden sm:flex items-center justify-between px-6 py-2 bg-maroon-deep border-b border-gold/20 text-xs">
+    <a href="tel:+919467282711" class="flex items-center gap-2 text-cream/80 hover:text-gold transition">
+      <span class="text-gold">📞</span> +91 94672 82711
+    </a>
+    <div class="flex items-center gap-2 text-gold-champagne">
+      <span class="w-1.5 h-1.5 rounded-full bg-gold seal-pulse"></span>
+      22 Carat Hallmark Gold · HUID Certified
+    </div>
+    <a href="https://www.instagram.com/gopi_ram_jewellers/" target="_blank" class="text-cream/80 hover:text-gold transition">Instagram ↗</a>
+  </div>
+
+  <!-- HEADER / NAV -->
+  <header class="sticky top-0 z-50 bg-void/95 backdrop-blur-md border-b border-gold/20">
+    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border-2 border-gold flex items-center justify-center text-gold font-display text-lg">ॐ</div>
+        <div>
+          <h1 class="font-display text-lg sm:text-xl gold-gradient-text tracking-wide leading-tight">Gopi Ram Jewellers</h1>
+          <p class="text-[10px] sm:text-xs text-cream/50 tracking-widest uppercase">Barona Wale · Est. Trust Since Generations</p>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 font-display text-sm tracking-wider text-cream/80">
+        <a href="#about" class="hover:text-gold transition">About</a>
+        <a href="#categories" class="hover:text-gold transition">Categories</a>
+        <a href="#scheme" class="hover:text-gold transition">Lucky Draw</a>
+        <a href="#contact" class="hover:text-gold transition">Contact</a>
+      </div>
+      <a href="https://wa.me/917988681919" target="_blank" class="btn-gold text-maroon-deep font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full font-display tracking-wide whitespace-nowrap">
+        WhatsApp Us
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-bg relative overflow-hidden px-6 py-20 sm:py-28 text-center">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <p class="fade-up text-gold-champagne text-xs sm:text-sm tracking-[0.3em] uppercase mb-5 font-display">Kharkhoda · Sonipat · Haryana</p>
+      <h2 class="fade-up delay-1 font-display font-black text-4xl sm:text-6xl lg:text-7xl gold-gradient-text leading-tight mb-6">
+        Kharkhoda's Most<br class="hidden sm:block"> Trusted Jewellery House
+      </h2>
+      <p class="fade-up delay-2 text-cream/70 text-base sm:text-lg max-w-xl mx-auto mb-4 leading-relaxed">
+        Latest Designs, Ultimate Finishing &amp; Minimum Making Charges — 22 Carat Hallmark Gold, crafted with a legacy Kharkhoda has trusted for years.
+      </p>
+      <p class="fade-up delay-2 text-gold text-sm mb-10 font-display tracking-wide">Popularly known as Gopiram Sunar</p>
+      <div class="fade-up delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/917988681919" target="_blank" class="btn-gold text-maroon-deep font-bold px-8 py-4 rounded-full font-display tracking-wide w-full sm:w-auto">
+          Chat on WhatsApp
+        </a>
+        <a href="#categories" class="border border-gold/50 text-gold px-8 py-4 rounded-full font-display tracking-wide hover:bg-gold/10 transition w-full sm:w-auto">
+          View Collections
+        </a>
+      </div>
+    </div>
+
+    <!-- Decorative gold rings floating -->
+    <div class="absolute top-1/4 left-8 w-24 h-24 rounded-full border-4 border-gold/10 hidden lg:block"></div>
+    <div class="absolute bottom-1/4 right-12 w-32 h-32 rounded-full border-4 border-gold/10 hidden lg:block"></div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section id="about" class="px-6 py-16 border-y border-gold/10 bg-maroon-deep/40">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="card-texture gold-border-glow rounded-2xl p-8 text-center">
+        <div class="text-gold text-3xl mb-3">7%</div>
+        <h3 class="font-display text-gold-champagne text-lg mb-2 tracking-wide">Flat Making Charges</h3>
+        <p class="text-cream/60 text-sm leading-relaxed">On all gold ornaments and rings — no hidden costs, transparent pricing every time.</p>
+      </div>
+      <div class="card-texture gold-border-glow rounded-2xl p-8 text-center">
+        <div class="text-gold text-3xl mb-3">✦</div>
+        <h3 class="font-display text-gold-champagne text-lg mb-2 tracking-wide">HUID Certified</h3>
+        <p class="text-cream/60 text-sm leading-relaxed">100% Hallmark Unique Identification on every 22KT 916 gold piece we sell.</p>
+      </div>
+      <div class="card-texture gold-border-glow rounded-2xl p-8 text-center">
+        <div class="text-gold text-3xl mb-3">⇄</div>
+        <h3 class="font-display text-gold-champagne text-lg mb-2 tracking-wide">Easy Gold Exchange</h3>
+        <p class="text-cream/60 text-sm leading-relaxed">Old gold exchange available at current market rates — fair valuation guaranteed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories" class="px-6 py-20 max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="text-gold-champagne text-xs tracking-[0.3em] uppercase mb-3 font-display">Our Collections</p>
+      <h2 class="font-display text-3xl sm:text-4xl gold-gradient-text">Crafted For Every Occasion</h2>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-texture gold-border-glow rounded-xl overflow-hidden group cursor-pointer">
+        <div class="aspect-square bg-gradient-to-br from-maroon to-void flex items-center justify-center text-5xl">💍</div>
+        <div class="p-4 text-center">
+          <h4 class="font-display text-gold text-sm tracking-wide">Gold Rings</h4>
+          <p class="text-cream/50 text-xs mt-1">22KT 916 · Gents &amp; Ladies</p>
+        </div>
+      </div>
+      <div class="card-texture gold-border-glow rounded-xl overflow-hidden group cursor-pointer">
+        <div class="aspect-square bg-gradient-to-br from-maroon to-void flex items-center justify-center text-5xl">📿</div>
+        <div class="p-4 text-center">
+          <h4 class="font-display text-gold text-sm tracking-wide">Necklaces</h4>
+          <p class="text-cream/50 text-xs mt-1">Customized as per demand</p>
+        </div>
+      </div>
+      <div class="card-texture gold-border-glow rounded-xl overflow-hidden group cursor-pointer">
+        <div class="aspect-square bg-gradient-to-br from-maroon to-void flex items-center justify-center text-5xl">✨</div>
+        <div class="p-4 text-center">
+          <h4 class="font-display text-gold text-sm tracking-wide">Tops &amp; Earrings</h4>
+          <p class="text-cream/50 text-xs mt-1">Light-weight daily wear</p>
+        </div>
+      </div>
+      <div class="card-texture gold-border-glow rounded-xl overflow-hidden group cursor-pointer">
+        <div class="aspect-square bg-gradient-to-br from-maroon to-void flex items-center justify-center text-5xl">💎</div>
+        <div class="p-4 text-center">
+          <h4 class="font-display text-gold text-sm tracking-wide">Diamond Sets</h4>
+          <p class="text-cream/50 text-xs mt-1">Special designer pieces</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-cream/40 text-xs mt-6">Also available: Bangles, Chains, Silver ornaments &amp; utensils, Silver coins</p>
+  </section>
+
+  <div class="ornate-divider max-w-4xl mx-auto"></div>
+
+  <!-- LUCKY DRAW SCHEME -->
+  <section id="scheme" class="px-6 py-20 max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+      <p class="text-gold-champagne text-xs tracking-[0.3em] uppercase mb-3 font-display">Savings Scheme</p>
+      <h2 class="font-display text-3xl sm:text-4xl gold-gradient-text">Lucky Draw Bishi Scheme</h2>
+    </div>
+    <div class="scheme-card rounded-2xl p-8 sm:p-10">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mb-8">
+        <div>
+          <p class="text-gold font-display text-3xl">₹3,000</p>
+          <p class="text-cream/50 text-xs uppercase tracking-wider mt-1">Monthly Installment</p>
+        </div>
+        <div>
+          <p class="text-gold font-display text-3xl">10</p>
+          <p class="text-cream/50 text-xs uppercase tracking-wider mt-1">Months Duration</p>
+        </div>
+        <div>
+          <p class="text-gold font-display text-3xl">100</p>
+          <p class="text-cream/50 text-xs uppercase tracking-wider mt-1">Total Members</p>
+        </div>
+      </div>
+      <div class="ornate-divider mb-8"></div>
+      <p class="text-cream/70 text-center leading-relaxed max-w-2xl mx-auto">
+        Har mahine ₹3,000 ki installment jamа karein. Monthly lucky draw me winner banne par, aapki baaki sabhi installments maaf ho jaati hain — aur aap purी scheme value ke gold ke haqdaar ban jaate hain.
+      </p>
+      <div class="text-center mt-8">
+        <a href="https://wa.me/917988681919" target="_blank" class="btn-gold text-maroon-deep font-bold px-8 py-3.5 rounded-full font-display tracking-wide inline-block">
+          Enquire About Scheme
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="bg-maroon-deep border-t border-gold/20 px-6 py-16">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div>
+        <h3 class="font-display text-2xl gold-gradient-text mb-4">Visit Our Store</h3>
+        <p class="text-cream/70 leading-relaxed mb-6">
+          Main Bazar, Near Delhi Chowk, Pacca Bagh,<br>
+          Kharkhoda, Sonipat, Haryana – 131402
+        </p>
+        <div class="space-y-2 text-sm mb-6">
+          <p class="text-cream/60">📞 +91 94672 82711 · +91 74047 94119 · +91 70828 06209</p>
+          <p class="text-cream/60">💬 WhatsApp: +91 79886 81919</p>
+          <p class="text-cream/60">🕒 Monday – Sunday: 9:00 AM – 8:00 PM</p>
+          <p class="text-cream/60">💳 Cash · Debit Cards · Online UPI Accepted</p>
+        </div>
+        <a href="https://www.instagram.com/gopi_ram_jewellers/" target="_blank" class="text-gold hover:text-gold-champagne transition text-sm font-display tracking-wide">
+          @gopi_ram_jewellers on Instagram ↗
+        </a>
+      </div>
+      <div class="rounded-xl overflow-hidden border border-gold/20 min-h-[220px]">
+        <iframe
+          src="https://www.google.com/maps?q=Delhi+Chowk,+Pacca+Bagh,+Kharkhoda,+Sonipat,+Haryana+131402&output=embed"
+          width="100%" height="100%" style="border:0; min-height: 220px;"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+    <div class="ornate-divider max-w-4xl mx-auto my-10"></div>
+    <p class="text-center text-cream/30 text-xs">© 2026 Gopi Ram Jewellers (Barona Wale) · Kharkhoda · All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
